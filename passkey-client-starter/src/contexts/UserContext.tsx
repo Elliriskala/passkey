@@ -21,9 +21,9 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const loginResult = await postLogin(email);
       if (loginResult) {
-        localStorage.setItem("token", loginResult.token);
+        localStorage.setItem('token', loginResult.token);
         setUser(loginResult.user);
-        navigate("/secret");
+        navigate('/secret');
       }
     } catch (e) {
       alert((e as Error).message);
@@ -31,7 +31,8 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const handleRegister = async (user: UserWithNoPassword) => {
-    // TODO implement register function
+    //implement register function
+    setRegisterResult(user);
   };
 
   const handleLogout = useCallback(() => {
